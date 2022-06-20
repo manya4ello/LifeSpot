@@ -9,7 +9,13 @@
 .navbar {
     color: darkgray;
     padding-left: 15%;
+    
 }
+
+
+    .navbar p:hover {
+        background: #333832;
+    }
 
 /*Глобальные стили для хедеров на всём сайте*/
 header {
@@ -46,7 +52,10 @@ aside {
     padding-top: 2%;
     font-size: large;
 }
-
+.search:focus {
+    background: #4b9ac4;
+    
+}
 body {
     position: relative;
     padding-left: 11%;
