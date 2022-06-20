@@ -3,6 +3,7 @@
     display: inline-block;
     padding-left: 1%;
     padding-top: 1%;
+    margin: 1%
 }
 
 .navbar {
@@ -23,18 +24,20 @@ header {
 }
 
 footer {
-    position: absolute;
+    position: relative; /* На моем браузере absolute работает криво - перекрывает видео */
     bottom: 0;
     font-size: medium;
     color: dimgrey;
     line-height: 66%;
     padding-left: 1%;
+    padding-top: 1%;
+    
 }
 
 aside {
     height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
     width: 10%;
-    position: absolute; /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
+    position: fixed;
     z-index: 1; /* Сайд-бар будет поверх остальных элементов */
     top: 0; /* Сайдбар будет в самой верхней части страницы */
     left: 0;
@@ -45,6 +48,7 @@ aside {
 }
 
 body {
+    position: relative;
     padding-left: 11%;
 }
 
