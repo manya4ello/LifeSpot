@@ -1,7 +1,7 @@
 ﻿
 
 
-function handleSession() {
+let sessionHandler = function handleSession() {
 
     // создадим объект Map для хранения сессии
     let session = new Map();
@@ -30,7 +30,7 @@ function handleSession() {
         console.log(result)
     }
 }
-function filterContent() {
+let contentFilter = function filterContent() {
 
     let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
     // Получим все контейнеры с видео
