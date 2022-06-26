@@ -33,7 +33,7 @@ function handleSession() {
     return session;
 }
 
-function filterContent(inputParseFunction) {
+function filterContent() {
 
     
     // Получим все контейнеры с видео
@@ -45,10 +45,10 @@ function filterContent(inputParseFunction) {
         let childElements = elements[i];
         // Получим элемент, содержащий описание видео
         // Он у нас единственный с тегом h3, снова воспользуемся поиском по тегу,
-        let videoDescription = childElements.getElementsByTagName('h3')[0];
+        let videoDescription = childElements.getElementsByTagName('h3')[0].innerText.toLowerCase();
 
 
-        if (!videoDescription.innerText.toLowerCase().includes(inputParseFunction().toLowerCase())) {
+        if (!videoDescription.includes(inputParseFunction().toLowerCase())) {
             // Описание
             elements[i].style.display = 'none';
         } else {
