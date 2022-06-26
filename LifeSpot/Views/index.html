@@ -7,7 +7,11 @@
     <script type="text/javascript" src="../Static/JS/index.js"></script>
 
     <script>
-       sessionHandler();
+        // Создадим и обработаем сессию
+        let session = handleSession();
+
+        // Логируем в консоль.
+        sessionLog(session);
     </script>
 
 </head>
@@ -20,7 +24,7 @@
         <!--Параграф-->
         <p>Покажем, что происходит прямо сейчас</p>
         <form>
-            <input type="text" oninput="contentFilter()" size=50%>
+            <input type="text" oninput="filterContent(document.getElementsByTagName('input')[0].value.toLowerCase())" size=50%>
 
         </form>
     </header>

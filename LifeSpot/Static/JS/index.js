@@ -1,13 +1,18 @@
 ﻿
+// Логирование сессии (объявлено через function declaration)
+let sessionLog = function logSession(session) {
+    // Вывод в консоль
+    for (let result of session) {
+        console.log(result)
+    }
+}
 
-
-let sessionHandler = function handleSession() {
-
+// Обработка сессии (объявлено через expression)
+function handleSession() {
     // создадим объект Map для хранения сессии
     let session = new Map();
     // Сохраним UserAgent
     session.set("userAgent", window.navigator.userAgent)
-
 
     // Запросим возраст пользователя и тоже сохраним
     session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
@@ -22,17 +27,15 @@ let sessionHandler = function handleSession() {
     else {
         alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
         window.location.href = "http://www.google.com"
-        a = true + 20 + "name"
     }
 
-    // Вывод в консоль
-    for (let result of session) {
-        console.log(result)
-    }
+    // Теперь мы возвращаем объект сессии
+    return session;
 }
-let contentFilter = function filterContent() {
 
-    let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
+function filterContent(userInput) {
+
+    
     // Получим все контейнеры с видео
     let elements = document.getElementsByClassName('video-container');
     // Пробежимся в цикле по контейнерам
@@ -45,7 +48,7 @@ let contentFilter = function filterContent() {
         let videoDescription = childElements.getElementsByTagName('h3')[0];
 
 
-        if (!videoDescription.innerText.toLowerCase().includes(inputString.toLowerCase())) {
+        if (!videoDescription.innerText.toLowerCase().includes(userInput.toLowerCase())) {
             // Описание
             elements[i].style.display = 'none';
         } else {
