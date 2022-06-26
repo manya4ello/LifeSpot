@@ -33,7 +33,7 @@ function handleSession() {
     return session;
 }
 
-function filterContent(userInput) {
+function filterContent(inputParseFunction) {
 
     
     // Получим все контейнеры с видео
@@ -48,7 +48,7 @@ function filterContent(userInput) {
         let videoDescription = childElements.getElementsByTagName('h3')[0];
 
 
-        if (!videoDescription.innerText.toLowerCase().includes(userInput.toLowerCase())) {
+        if (!videoDescription.innerText.toLowerCase().includes(inputParseFunction().toLowerCase())) {
             // Описание
             elements[i].style.display = 'none';
         } else {
