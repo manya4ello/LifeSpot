@@ -17,6 +17,8 @@
         background: #333832;
     }
 
+  
+
 /*Глобальные стили для хедеров на всём сайте*/
 header {
     color: black;
@@ -67,4 +69,19 @@ header, footer, aside, body, .navbar, .video-container {
 
 header, footer, body, .video-container {
     background-color: #cbd6c9;
+}
+
+/*Страница About*/
+.review-container, .review-button {
+    display: inline-block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.review-text {
+    display: block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
 }
