@@ -1,18 +1,16 @@
 ﻿
-let session = new Map();
-
-function handleSession() {
-    // Сохраним время начала сессии
-    session.set("startDate", new Date().toLocaleString())
-    // Сохраним UserAgent
-    session.set("userAgent", window.navigator.userAgent)
+let session = {
+    'startDate': new Date().toLocaleString(),
+    'userAgent': window.navigator.userAgent,
+    'userAge': prompt("Пожалуйста, введите ваш возраст?")
 }
+
 
 
 function checkAge() {
     session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
 
-    if (session.get("age") >= 18) {
+    if (session.userAge >= 18) {
         alert("Приветствуем на LifeSpot! " + '\n' + "Текущее время: " + new Date().toLocaleString());
     }
     else {
@@ -22,9 +20,9 @@ function checkAge() {
 }
 
 let sessionLog = function logSession() {
-    for (let result of session) {
-        console.log(result)
-    }
+    console.log('Начало сессии: ' + session.startDate)
+    console.log('Даныне клиента: ' + session.userAgent)
+    console.log('Возраст пользователя: : ' + session.userAge)
 }
 
 function filterContent() {
