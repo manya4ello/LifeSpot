@@ -8,13 +8,11 @@
 
     <script>
 
-        // Проверка на возраст
-       // checkAge();
+      
 
-        
+        // обработка сессии
+        handleSession(logger, checker /* Коллбек-функции */);
 
-        // вывод данных сессии в консоль
-        sessionLog();
 
         const inputParseFunction = function () {
             return document.getElementsByTagName('input')[0].value.toLowerCase();
