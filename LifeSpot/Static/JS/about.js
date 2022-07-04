@@ -91,7 +91,7 @@ const writeReview = review => {
     // Для проверки, является ли объект отзывом, используем свойство hasOwnProperty
     if (review.hasOwnProperty('rate')) {
         let commentId = Math.random();  
-        likeCounter += '<button id="' + commentId + '" style="border: none" onclick="addLike(this.id)">' + `❤️ ${review.rate}</button>`
+        likeCounter += '<button id="' + commentId + '" style="border: none" onclick="addLike(this.id)">' + ` ❤️ ${review.rate}</button>`
     }
 
     // Запишем результат
