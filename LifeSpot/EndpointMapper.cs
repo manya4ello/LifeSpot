@@ -9,6 +9,24 @@ namespace LifeSpot
     public static class EndpointMapper
     {
         /// <summary>
+        ///  Маппинг Picd
+        /// </summary>
+        public static void MapPics(this IEndpointRouteBuilder builder)
+        {
+            var picFiles = new[] { "london.jpg", "ny.jpg", "spb.jpg" };
+
+            foreach (var fileName in picFiles)
+            {
+                builder.MapGet($"/Static/Pics/{fileName}", async context =>
+                {
+                    var picPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "Pics", fileName);
+                    var pic = await File.ReadAllTextAsync(picPath);
+                    await context.Response.WriteAsync(pic);
+                });
+            }
+        }
+
+        /// <summary>
         ///  Маппинг CSS-файлов
         /// </summary>
         public static void MapCss(this IEndpointRouteBuilder builder)
