@@ -121,9 +121,8 @@ function addLike(id) {
 }
 
 let slideIndex = 1;
-
-currentSlide(slideIndex);
-
+showSlides(slideIndex);
+setTimeout(showSlidesAuto, 4000);
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -147,8 +146,15 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-
-    //setTimeout(plusSlides(1), 2000);
+        
 }
 
 
+
+function showSlidesAuto() {
+
+    slideIndex++;
+    showSlides(slideIndex);
+    
+    setTimeout(showSlidesAuto, 4000);
+}
