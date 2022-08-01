@@ -121,7 +121,9 @@ function addLike(id) {
 }
 
 let slideIndex = 1;
+
 currentSlide(slideIndex);
+
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
